@@ -40,6 +40,7 @@ open(iunit,file=innpr)
 read(iunit,*) marker,isversion
 if(marker.ne.999999) isversion=1
 
+! Set isversion=2 to force RALPH 2 format
 isversion=2
 
 if(isversion.eq.1) then
