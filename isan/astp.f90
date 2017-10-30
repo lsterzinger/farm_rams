@@ -37,8 +37,8 @@ print 91,trim(innpr)
 91 format(//,' Reading pressure gridded data',/,a,//)
 
 open(iunit,file=innpr)
-read(iunit,*) marker,isversion
-if(marker.ne.999999) isversion=1
+! read(iunit,*) marker,isversion
+! if(marker.ne.999999) isversion=1
 
 ! Set isversion=2 to force RALPH 2 format
 isversion=2
