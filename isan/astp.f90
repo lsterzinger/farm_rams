@@ -54,8 +54,8 @@ elseif (isversion.eq.2) then
    print*,'doing RALPH 2 format'
    read(iunit,*) iyy,imm,idd,ihh,itinc,nprz,nprx,npry
    read(iunit,*) inproj,gdatdx,gdatdy,xswlat,xswlon  &
-             ,xnelat,xnelon,cntlat,cntlon,secondlat
-   read(iunit,*) ivertcoord,(levpr(lv),lv=1,nprz)
+             ,xnelat,xnelon,cntlat,cntlon
+   read(iunit,*) (levpr(lv),lv=1,nprz)
 endif
 
 !Saleeby(2010): Set itinc=0 since this variable seems un-necessary
