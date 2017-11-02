@@ -1,17 +1,17 @@
 !
 ! Copyright (C) 1991-2004  ; All Rights Reserved ; Colorado State University
 ! Colorado State University Research Foundation ; ATMET, LLC
-! 
+!
 ! This file is free software; you can redistribute it and/or modify it under the
-! terms of the GNU General Public License as published by the Free Software 
+! terms of the GNU General Public License as published by the Free Software
 ! Foundation; either version 2 of the License, or (at your option) any later version.
-! 
-! This software is distributed in the hope that it will be useful, but WITHOUT ANY 
-! WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A 
+!
+! This software is distributed in the hope that it will be useful, but WITHOUT ANY
+! WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A
 ! PARTICULAR PURPOSE.  See the GNU General Public License for more details.
 !
-! You should have received a copy of the GNU General Public License along with this 
-! code; if not, write to the Free Software Foundation, Inc., 
+! You should have received a copy of the GNU General Public License along with this
+! code; if not, write to the Free Software Foundation, Inc.,
 ! 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
 !======================================================================================
 
@@ -162,7 +162,7 @@ if (inproj.eq.1) then
 
 endif !inproj==1
 
-! Deallocate memory for the pressure data 
+! Deallocate memory for the pressure data
 
 if(allocated(p_u))   deallocate(p_u)
 if(allocated(p_v))   deallocate(p_v)
@@ -227,7 +227,7 @@ CALL get_press (iunit)
 
 !!!!!!!! Be careful !!!!!!!!!
 !  Check input humidity variable. Assume that if the max of the field is greater
-!  than 1.1 (allow for some machine roundoff), 
+!  than 1.1 (allow for some machine roundoff),
 !  it is specific humidity (in g/kg) which needs to be converted to rh
 rhmax=maxval(p_r, mask=p_r.lt.1.e29)
 
@@ -666,7 +666,7 @@ do n=1,np
       t1(n)=-t2(n)- (2.*9.8*(z1(n)-z2(n))  &
            /(287. *(log(p1*100.)-log(p2*100.))) )  &
            /vtfact
-      !if(n.eq.36*(13-1)+13) print*,t1(n),t2(n),z1(n),z2(n),vtfact,p1,p2 
+      !if(n.eq.36*(13-1)+13) print*,t1(n),t2(n),z1(n),z2(n),vtfact,p1,p2
    else
       t1(n)=1.e30
    endif
@@ -775,4 +775,3 @@ enddo
 
 return
 END SUBROUTINE pr_interp
-
